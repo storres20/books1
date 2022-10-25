@@ -1,5 +1,3 @@
-/* eslint-disable max-classes-per-file */
-
 const addButton = document.getElementById('addButton');
 const title = document.getElementById('title');
 const author = document.getElementById('author');
@@ -21,22 +19,20 @@ if (localStorage.getItem('books') !== null) {
 }
 /* ***** */
 
-class Book {
+class Methods {
   constructor(title, author) {
     this.title = title;
     this.author = author;
   }
-}
 
-class Methods {
-  static addbook(book1) {
+  addbook = () => {
     addBook.innerHTML += `
     <div class="books">
       <p>"${title.value}" by "${author.value}"</p>
       <button class="remove" name="${title.value}">Remove</button>
     </div>
   `;
-
+    const book1 = { title: this.title, author: this.author };
     if (localStorage.getItem('books') === null) {
       const books = [];
       books.push(book1);
@@ -48,7 +44,7 @@ class Methods {
     }
   }
 
-  static removebook() {
+  removebook = () => {
     /* remove button */
     const remove = document.querySelectorAll('.remove');
 
@@ -69,17 +65,13 @@ class Methods {
   }
 }
 
-/* initialize method class */
-const ui = new Methods();
-
 addButton.addEventListener('click', (e) => {
   e.preventDefault();
 
-  const book1 = new Book(title.value, author.value);
-
   /* add book with method class */
-  ui.addbook(book1);
-});
+  const ui = new Methods(title.value, author.value);
+  ui.addbook();
 
-/* remove book with method class */
-ui.removebook();
+  /* remove book with method class */
+  ui.removebook();
+});
