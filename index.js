@@ -70,3 +70,18 @@ class methods {
     });
   }
 }
+
+/* initialize method class */
+const ui = new methods();
+
+addButton.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const book1 = new Book(title.value, author.value);
+  
+  /* add book with method class */
+  ui.addbook(book1);
+});
+
+/* remove book with method class */
+ui.removebook();
