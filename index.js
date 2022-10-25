@@ -1,5 +1,3 @@
-/* eslint-disable*/
-
 const addButton = document.getElementById('addButton');
 const title = document.getElementById('title');
 const author = document.getElementById('author');
