@@ -10,6 +10,38 @@ body {
   align-items: center;
 }
 
+/* nav */
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  border: 3px solid black;
+  padding: 20px;
+}
+
+nav > h3 {
+  padding-left: 20px;
+}
+
+nav > div {
+  padding-right: 20px;
+}
+
+.divNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.link {
+  cursor: pointer;
+}
+
+/* ***************** */
+
 .books {
   display: flex;
   flex-direction: row;
@@ -47,3 +79,22 @@ p {
 
 .books:nth-child(even) { background: #ccc; }
 .books:nth-child(odd) { background: #fff; }
+
+#contactBook {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+#contactBook > div > p {
+  margin: 0;
+}
+
+#contactBook > ul {
+  margin-left: 30px;
+}
+
+.hide {
+  display: none;
+}
