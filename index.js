@@ -2,7 +2,48 @@ const addButton = document.getElementById('addButton');
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 
+const list = document.getElementById('list'); // link LIST
 const addBook = document.getElementById('addBook');
+
+const addNew = document.getElementById('addNew'); // link ADDNEW
+const newBook = document.getElementById('newBook');
+
+const contact = document.getElementById('contact'); // link CONTACT
+const contactBook = document.getElementById('contactBook');
+
+/* initialize page */
+newBook.style.display = 'block';
+contactBook.style.display = 'none';
+addBook.style.display = 'none';
+
+/* navbar links */
+list.addEventListener('click', () => {
+  newBook.style.display = 'none';
+  contactBook.style.display = 'none';
+  addBook.style.display = 'block';
+  list.style.color = 'blue';
+  addNew.style.color = 'black';
+  contact.style.color = 'black';
+});
+
+addNew.addEventListener('click', () => {
+  newBook.style.display = 'block';
+  addBook.style.display = 'none';
+  contactBook.style.display = 'none';
+  list.style.color = 'black';
+  addNew.style.color = 'blue';
+  contact.style.color = 'black';
+});
+
+contact.addEventListener('click', () => {
+  newBook.style.display = 'none';
+  addBook.style.display = 'none';
+  contactBook.style.display = 'block';
+  list.style.color = 'black';
+  addNew.style.color = 'black';
+  contact.style.color = 'blue';
+});
+/* ****** */
 
 /* addBook - hold books after every refresh page */
 if (localStorage.getItem('books') !== null) {
@@ -74,4 +115,7 @@ addButton.addEventListener('click', (e) => {
 
   /* remove book with method class */
   ui.removebook();
+
+  title.value = '';
+  author.value = '';
 });
