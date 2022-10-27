@@ -8,15 +8,40 @@
   <title>Awesome Books</title>
 </head>
 <body>
-  <h1>All awesome books</h1>
-  <section id="addBook"></section>
+  <nav>
+    <h3>All awesome books</h3>
+    <div class="divNav">
+      <p id="list" class="link">List</p>
+      <p>|</p>
+      <p id="addNew" class="link">Add New</p>
+      <p>|</p>
+      <p id="contact" class="link">Contact</p>
+    </div>
+  </nav>
   
-  <h2>Add a new book</h2>
-  <form id="form">
-    <input type="text" name="title" id="title" placeholder="Title" autocomplete="off">
-    <input type="text" name="author" id="author" placeholder="Author" autocomplete="off">
-    <button type="submit" id="addButton">Add</button>
-  </form>
+  <section id="addBook" class="hide"></section>
+  
+  <section id="newBook">
+    <h2>Add a new book</h2>
+    <form id="form">
+      <input type="text" name="title" id="title" placeholder="Title" autocomplete="off">
+      <input type="text" name="author" id="author" placeholder="Author" autocomplete="off">
+      <button type="submit" id="addButton">Add</button>
+    </form>
+  </section>
+  
+  <section id="contactBook" class="hide">
+    <h2>Contact Information</h2>
+    <div>
+      <p>Do you have any questions or you just want to say "Hello"?</p>
+      <p>You can reach out to us!</p>
+    </div>
+    <ul>
+      <li>Our e-mail: mail@mail.com</li>
+      <li>Our phone number: 0043586534422</li>
+      <li>Our address: Streetname 22, 84503 City, Country</li>
+    </ul>
+  </section>
   
   <script src="index.js"></script>
 </body>
